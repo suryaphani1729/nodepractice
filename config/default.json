@@ -1,0 +1,4 @@
+{
+    "name" : "My Node Practice App",
+    "jwtPrivateKey" : "IamPrivateKey"
+}

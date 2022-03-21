@@ -1,0 +1,1 @@
+Static read me text file
