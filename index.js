@@ -16,6 +16,8 @@ require('./startup/config')(app);
 require('./startup/logging')();
 require('./startup/db')();
 require('./startup/routes')(app);
+require('./startup/prod')(app);
+
 
 app.get('/', (req,res)=>{
     res.render('index',{title:'Title',message:'Message'});
