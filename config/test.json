@@ -1,5 +1,5 @@
 {
     "name" : "My Node Practice App",
     "jwtPrivateKey" : "IamPrivateKey",
-    "db" :"mongodb://localhost/playground"
+    "db": "mongodb://localhost/playground_tests"
 }

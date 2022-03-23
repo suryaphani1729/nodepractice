@@ -1,5 +1,6 @@
 const winston = require('winston');
 const mongoose = require('mongoose');
+const config = require('config');
 const logger = winston.createLogger({transports: [new winston.transports.File({filename:'logfile.log'}),
 ],
 useUnifiedTopology: true,
@@ -11,8 +12,9 @@ logger.add(new winston.transports.Console({
   }));
 
 module.exports = function() {
-    mongoose.connect('mongodb://localhost/playground', {useNewUrlParser: true,  useUnifiedTopology: true})
-    .then(()=> logger.info("DB Connected"))
+  const db = config.get('db');
+    mongoose.connect(db, {useNewUrlParser: true,  useUnifiedTopology: true})
+    .then(()=> logger.info(`DB Connected -- ${db}`))
     .catch(err => logger.error(err));
 
 }

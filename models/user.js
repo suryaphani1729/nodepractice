@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
-mongoose.connect('mongodb://localhost/playground',{useNewUrlParser: true,  useUnifiedTopology: true}).then(()=>{
+
+
+ mongoose.connect(config.get('db'),{useNewUrlParser: true,  useUnifiedTopology: true})
+.then(function(){
   console.log("DB Connected");
 }).catch(err =>{
   console.log(err);
